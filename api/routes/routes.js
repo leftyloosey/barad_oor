@@ -3,13 +3,17 @@ const { Strang } = require('../models/Strang')
 console.log(Strang)
 
 router.get('/hello', async (req, res) => {
-  const newStrang = new Strang({
-    content: 'sorcery',
-  })
-  await newStrang.save()
-  // const data = await Strang.find({})
-  // res.send(JSON.stringify(data))
-  res.status(200).send('yabluko')
+  try {
+    const newStrang = new Strang({
+      content: 'sorcery',
+    })
+    await newStrang.save()
+    const data = await Strang.find({})
+    res.send(JSON.stringify(data))
+    // res.status(200).send('yabluko')
+  } catch (error) {
+    res.status(400).json(err)
+  }
 })
 
 router.post('/newstrang', async (req, res) => {

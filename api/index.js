@@ -7,7 +7,7 @@ const { connectDB } = require('./config/db')
 const cors = require('cors')
 
 connectDB()
-// Cors setup to allow requests  in production from the client
+// Cors setup to allow requests in production from the client
 app.use(
   cors({
     origin: '*',
