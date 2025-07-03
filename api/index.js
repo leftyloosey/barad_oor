@@ -29,8 +29,8 @@ app.use(express.json())
 
 // Importing routes and using api prefix for them
 app.use('/api', require('./routes/routes.js'))
-const port = process.env.PORT || 5002
-app.listen(port, () => console.log('🚀 Listening on port: ' + port + ' 🚀'))
+// const port = process.env.PORT || 5002
+// app.listen(port, () => console.log('🚀 Listening on port: ' + port + ' 🚀'))
 
 // Export the Express API to be available for the serverless function handler
 module.exports = app
