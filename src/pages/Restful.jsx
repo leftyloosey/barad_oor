@@ -15,10 +15,12 @@ const Restful = () => {
       // const response = await axios.get('http://localhost:5002/api/hello')
       // console.log(response)
     } catch (error) {
+      console.log('heeeeeeeey')
       console.error(error)
     }
   }
   useEffect(() => {
+    console.log('insideuse')
     getHello().then((result) => {
       setStrangs(result.data)
     })
